@@ -1,0 +1,8 @@
+                                          -----> Model <----> DB
+                                         |         |
+            response        request      |         |
+   Browser <-------- router -------> controller <--
+                             GET         ^
+                             PUT         |
+                             POST         -----> view <----> html/images/css/js
+                             DELETE
