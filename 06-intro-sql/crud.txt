@@ -1,0 +1,8 @@
+
+
+Create  INSERT () INTO table_name
+Read    SELECT () FROM table_name
+Update  UPDATE table_Name SET ()
+Delete  DELETE FROM table_name WHERE
+
+
