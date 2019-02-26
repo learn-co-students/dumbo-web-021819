@@ -17,7 +17,10 @@ class Painting
     @@all
   end
 
-  # * `Painting.total_price`
-  #   * Returns an `integer` that is the total price of all paintings
+  def self.total_price
+    #   * Returns an `integer` that is the total price of all paintings
+    self.all.reduce(0) {|sum, painting| sum + painting.price}
+  end
+
 
 end

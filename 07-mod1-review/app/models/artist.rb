@@ -25,41 +25,38 @@ class Artist
     paintings.map {|painting| painting.gallery }
   end
 
-  def self.total_experience
-    #   * Returns an `integer` that is the total years of experience of all artists
-    #
-    #
-    # total = 0
-    #
-    # self.all.each do |artist|
-    #   total = total + artist.years_experience
-    # end
-    # total
-
-    # years = self.all.map { |artist| artist.years_experience }
-    # years.sum
-    # years.inject(:+)
-    # Same using a block and inject
-        # (5..10).inject { |sum, n| sum + n }
-    self.all.reduce(0) {|sum, artist| sum + artist.years_experience}
-
-
-
-    
+  def cities
+    galleries.map {|gallery| gallery.city}
   end
 
+  def create_painting(title, price, gallery)
+    Painting.new(title, price, self, gallery)
+  end
 
+  def self.total_experience
 
-  # * `Artist#cities`
-  #   * Return an `array` of all cities that an artist has paintings in
-  #
-  # * `Artist.total_experience`
-  #
-  # * `Artist.most_prolific`
-  #   * Returns an `instance` of the artist with the highest amount of paintings per year of experience.
-  #
-  # * `Artist#create_painting`
-  #   * Given the arguments of `title`, `price` and `gallery`, creates a new painting belonging to that artist
+    total = 0
+
+    self.all.each do |artist|
+      total = total + artist.years_experience
+    end
+    total
+
+    # Alternate approach:
+    # self.all.reduce(0) {|sum, artist| sum + artist.years_experience}
+
+  end
+
+  def paintings_per_year
+    # HELPER METHOD FOR MOST PROLIFIC
+    # returns the number of paintings per the artist's years of experience
+    self.paintings.length / self.years_experience
+  end
+
+  def self.most_prolific
+    #   * Returns an `instance` of the artist with the highest amount of paintings per year of experience.
+    self.all.max_by {|artist| artist.paintings_per_year}
+  end
 
 
 end
