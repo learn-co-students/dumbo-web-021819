@@ -1,0 +1,19 @@
+
+
+
+WHAT      VERB          PATH            AR METHOD
+
+Read all  GET           /dogs           Dog.all   
+Read one  GET           /dogs/:id       Dog.find  
+
+New form  GET           /dogs/new       Dog.new -------|
+Create    POST          /dogs           Dog.create <---|
+
+Edit      GET           /dogs/:id/edit  Dog.find ------|
+Update    PUT / PATCH   /dogs/:id       Dog#Update <---|
+
+Delete    DELETE        /dogs/:id       Dog#destroy
+
+
+
+

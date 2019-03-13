@@ -1,0 +1,24 @@
+<h1>Edit <%= @dog.name %></h1>
+
+<form method="POST" action="/dogs/<%= @dog.id %>">
+  <input type="hidden" value="PATCH" name="_method" />
+  <ul>
+    <li>
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="dog[name]" value="<%= @dog.name %>"></input>
+    </li>
+    <li>
+      <label for="tail-length">Tail Length:</label>
+      <input type="number" id="tail-length" name="dog[tail_length]" value="<%= @dog.tail_length %>"></input>
+    </li>
+    <li>
+      <label for="birth-year">Birth Year:</label>
+      <input type="number" id="birth-year" name="dog[birth_year]" value="<%= @dog.birth_year %>"></input>
+    </li>
+    <li>
+      <label for="fluffiness">Fluffiness:</label>
+      <input type="number" id="fluffiness" name="dog[fluffiness]" value="<%= @dog.fluffiness %>"></input>
+    </li>
+  </ul>
+  <input type="submit" />
+</form>
