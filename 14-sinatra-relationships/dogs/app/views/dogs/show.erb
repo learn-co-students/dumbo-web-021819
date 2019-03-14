@@ -1,0 +1,10 @@
+<h1><%= @dog.name %></h1>
+Tail Length: <%= @dog.tail_length %>
+Age: <%= Time.now.year - (@dog.birth_year || 0) %>
+Fluffiness: <%= @dog.fluffiness %>
+Legs: <%= @dog.legs.count %>
+
+<form method="POST" action="/dogs/<%= @dog.id %>">
+  <input type="hidden" value="DELETE" name="_method" />
+  <input type="submit" value="Send <%= @dog.name %> to live on a farm" />
+</form>

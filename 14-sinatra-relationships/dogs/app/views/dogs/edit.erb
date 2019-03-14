@@ -1,0 +1,6 @@
+<h1>Edit <%= @dog.name %></h1>
+
+<form method="POST" action="/dogs/<%= @dog.id %>">
+  <input type="hidden" value="PATCH" name="_method" />
+  <%= erb :"_form" %>
+</form>
