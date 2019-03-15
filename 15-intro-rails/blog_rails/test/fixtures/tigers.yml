@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  roar_volume: 1
+  tail_length: 1
+  height: 1
+
+two:
+  name: MyString
+  roar_volume: 1
+  tail_length: 1
+  height: 1

@@ -1,0 +1,16 @@
+<h1>List o' Dinos</h1>
+
+<ul>
+  <% @dinosaurs.each do |dino| %>
+    <li>
+      <!-- <a href="/dinosaurs/<%= dino.id %>">
+        <%= dino.name %>
+      </a> -->
+
+      <%# link_to dino.name, "/dinosaurs/#{ dino.id }" %>
+      <%# link_to dino.name, dinosaur_path(dino.id) %>
+      <%# link_to dino.name, dinosaur_path(dino) %>
+      <%= link_to dino.uppercase_name, dino %>
+    </li>
+  <% end %>
+</ul>
