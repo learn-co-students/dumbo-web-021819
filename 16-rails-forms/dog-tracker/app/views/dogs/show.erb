@@ -1,0 +1,15 @@
+<h1><%= @dog.name %></h1>
+
+<ol>
+  <li>
+Tail Length: <%= @dog.tail_length %> foot
+</li>
+<li>
+Color: <span class="swatch" background="<%= @dog.color_hexadecimal %>"></span>
+</li>
+</ol>
+
+<%# link_to "Edit #{ @dog.name }", "/dogs/#{ @dog.id }/edit" %>
+<footer>
+<%= link_to "Edit #{ @dog.name }", edit_dog_path(@dog) %>
+</footer>
