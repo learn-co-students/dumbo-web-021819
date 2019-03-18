@@ -1,24 +1,18 @@
 <h1>Editing <%= @dog.name %></h1>
+
+<%= render "form" %>
+
 <!-- 
 <form action="/dogs/<%= @dog.id %>" method="POST">
   <input type="hidden" name="_method" value="PATCH">
 
   <label for="name">Name:</label>
   <input id="name" type="text" name="dog[name]"></input>
-</form> -->
+</form> 
 <%= form_tag dog_path, method: :patch do %>
 
   <%= label_tag :name %>
   <%= text_field_tag :name, @dog.name %>
-
-<% end %>
-
-<%= form_for @dog do |form| %>
-
-  <%= form.label :name %>
-  <%= form.text_field :name %>
-
-  <%= form.submit %>
 
 <% end %>
 
@@ -30,4 +24,6 @@
   <%= form.submit %>
 
 <% end %>
+
+-->
 
