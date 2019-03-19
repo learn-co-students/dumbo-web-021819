@@ -1,0 +1,22 @@
+<ul style="color: red;">
+  <% @dog.errors.full_messages.each do |message| %>
+  <li>
+    <%= message %>
+  </li>
+  <% end %>
+</ul>
+
+<%= form_for @dog do |form| %>
+
+  <%= form.label :name %>
+  <%= form.text_field :name %>
+
+  <%= form.label :tail_length %>
+  <%= form.number_field :tail_length %>
+
+  <%= form.label :color_hexadecimal %>
+  <%= form.text_field :color_hexadecimal %>
+
+  <%= form.submit %>
+
+<% end %>
