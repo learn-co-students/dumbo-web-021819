@@ -1,0 +1,6 @@
+Rails.application.routes.draw do
+  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  resources :dogs, only: [:show, :index, :new, :create, :edit, :update]
+  resources :parks, only: [:index, :show]
+  resources :visits, only: [:new, :create]
+end

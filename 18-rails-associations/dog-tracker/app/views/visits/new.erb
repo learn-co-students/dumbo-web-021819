@@ -1,0 +1,28 @@
+<h1>New Visit</h1>
+
+<ul style="color: red;">
+  <% @visit.errors.full_messages.each do |message| %>
+  <li>
+    <%= message %>
+  </li>
+  <% end %>
+</ul>
+
+
+<%= form_for @visit do |f| %>
+
+  <%= f.label :dog_id %>
+  <%= f.collection_select :dog_id, @all_dogs, :id, :name %>
+  <%# f.text_field :dog_id %>
+<!--   <select name=visit[dog_id]>
+    <option value="1">Clifford</option>
+    <option value="2">Balto</option>
+  </select> -->
+  <%= f.label :park_id %>
+  <%= f.collection_select :park_id, @all_parks, :id, :name, { prompt: "Select a park..." } %>
+
+  <%# f.text_field :park_id %>
+
+
+  <%= f.submit %>
+<% end %>
