@@ -1,0 +1,18 @@
+
+<div>
+  <%= @user.email %>
+</div>
+<div>
+  <%= @user.display_name %>
+</div>
+<ul>
+<% @repositories.each do |repo| %>
+  <li><%= repo.title %>
+    <%#  if @user == current_user  %>
+      <%= form_tag("/repositories/#{repo.id}", method: :delete) do %>
+        <%= submit_tag "Delete" %>
+      <% end %>
+    <%# end %>
+  </li>
+<% end %>
+</ul>
