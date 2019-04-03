@@ -165,7 +165,7 @@ ulTag.addEventListener('click',  function(event) {
     event.target.parentElement.remove();
   } else if (event.target.classList.contains('favorite')) {
     event.target.parentElement.innerHTML =
-    `<img src="https://media.giphy.com/media/fxKZAR0nAUhJCcvqP5/giphy.gif" class="angelo-parrot" />` +
+    `<img src="https://emoji.slack-edge.com/T02MD9XTF/matt-parrot/6e11d5decd7c13f5.gif" class="matt-parrot" />` +
     event.target.parentElement.innerHTML
   }
 })
@@ -209,48 +209,54 @@ formTag.addEventListener('submit', function(event) {
 
 
 
-// compliments.each do |compliment|
+
+
+
+
+
+// // we need to iterate over our compliments
+// for (let i = 0; i < compliments.length; i++) {
+//   let compliment = compliments[i];
 //
+// }
+
+
+
+
+// console.log('I loaded!!!!!');
+// // we are finding our <em> tag & removing it
+// document.querySelector('em').remove();
+
+
+
+// // in ruby???
+// compliments.each do |compliment|
+//   // do stuff with each compoliment
 // end
 
 
-
-
-
-
-
-// anything I click on should have an `angelo-parrot` added to it
-// document.addEventListener('click', function(event) {
-//   console.log('im attached to the document')
-//   const imgTag = document.createElement('img')
-//   imgTag.src = 'https://media.giphy.com/media/fxKZAR0nAUhJCcvqP5/giphy.gif';
-//   imgTag.classList.add('angelo-parrot')
+// let firstButtonTag = document.querySelector('button');
 //
-//   event.target.append(imgTag)
-// })
-
-
-// to find my first button and alert "HELLO!" when I click it
-// const firstButtonTag = document.querySelector('button');
+// firstButtonTag.addEventListener('click', function() {
+// 	alert("HELLO!");
+// });
 //
-// firstButtonTag.addEventListener('click', function(event){
-//   console.log('im attached directly to the button')
-//   alert('HELLO!')
-// })
-
-
-
-// to click on any li and have it's background color change to `pink`
-// ulTag.addEventListener('mouseover', function(event) {
-//   const liTag = event.target;
-//   if(liTag.tagName === 'LI') {
-//     liTag.style.backgroundColor = 'pink';
-//   }
-// })
-// const liTags = document.querySelectorAll('li')
+// // anything I click on should have an `matt-parrot` added to it
+// let htmlTag = document.querySelector('html');
 //
-// for (let i = 0; i < liTags.length; i++) {
-//   liTags[i].addEventListener('click', function(event) {
-//     event.target.parentElement.parentElement.style.backgroundColor = 'pink'
-//   })
-// }
+// htmlTag.addEventListener('click', function(event) {
+//   const imgTag = document.createElement('img');
+//     imgTag.src = 'https://emoji.slack-edge.com/T02MD9XTF/matt-parrot/6e11d5decd7c13f5.gif';
+//     imgTag.classList.add('matt-parrot');
+//
+//     event.target.append(imgTag);
+//     console.log(event.target);
+// })
+//
+// // to hover over any li and have it's background color change to `pink`
+// document.querySelector('ul').addEventListener('mouseover', function(event) {
+//  if (event.target.tagName === 'LI') {
+//    event.target.style.background = 'pink';
+//  }
+//
+// })
