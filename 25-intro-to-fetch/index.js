@@ -19,18 +19,16 @@ const createComplimentCardHTML = (compliment) => {
 
 const ulTag = document.querySelector('ul');
 
-let compliments;
 fetch('http://localhost:3000/compliments')
   .then((response) => {
     return response.json()
-  }).then((complimentsResponse) => {
+  }).then((compliments) => {
     // use them to do something....
-    compliments = complimentsResponse;
+    compliments.forEach((compliment) => {
+      ulTag.innerHTML += createComplimentCardHTML(compliment.message)
+    })
   })
 
-  compliments.forEach((compliment) => {
-    ulTag.innerHTML += createComplimentCardHTML(compliment.message)
-  })
 
 // be able to add a "hug" to a compliment and see my hug count go up accordingly
 
