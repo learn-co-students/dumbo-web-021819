@@ -7,6 +7,8 @@ import RapperCard from './RapperCard'
 import RapperForm from './RapperForm'
 import RapperSearch from './RapperSearch'
 
+import {Route, Switch, Link} from 'react-router-dom'
+
 class RapperContainer extends React.Component {
   // When dealing with state
   // We need to tell it the initial state
@@ -80,13 +82,41 @@ class RapperContainer extends React.Component {
   render(){
     return(
       <div>
-        <h1>This is RapperContainer</h1>
-        <RapperForm handleSubmit={this.handleSubmit} />
-        <RapperSearch searchTerm={this.state.searchTerm} beef={this.handleSearchChange} />
-        {this.state.rappers.filter(rapper => rapper.name.toLowerCase().includes(this.state.searchTerm.toLowerCase())).map(rapper => <RapperCard
-          name={rapper.name}
-          happyImage={rapper.happyImage}
-          sadImage={rapper.sadImage}/>)}
+        <Switch>
+        <Route path="/rappers/:name" render={(props) => {
+          console.log('These are the renderProps: ', props)
+
+          // Find me the rapper from our state based upon name
+          const foundRapper = this.state.rappers.find(rapper => {
+            // Drake === drake
+            return rapper.name.toLowerCase() === props.match.params.name.toLowerCase()
+          })
+
+          if(foundRapper === undefined){
+            props.history.push("/")
+            return
+          } else {
+            return (<RapperCard name={foundRapper.name} happyImage={foundRapper.happyImage} sadImage={foundRapper.sadImage}/>)
+          }
+
+
+        }} />
+        <Route path="/rappers" render={(props) => {
+          return (
+            <div>
+              <h1>This is RapperContainer</h1>
+              <RapperForm handleSubmit={this.handleSubmit} />
+              <RapperSearch searchTerm={this.state.searchTerm} beef={this.handleSearchChange} />
+              {this.state.rappers.filter(rapper => rapper.name.toLowerCase().includes(this.state.searchTerm.toLowerCase())).map(rapper =>
+                  <RapperCard
+                  name={rapper.name}
+                  happyImage={rapper.happyImage}
+                  sadImage={rapper.sadImage} />
+              )}
+            </div>
+          )}}/>
+        </Switch>
+
       </div>
     )
   }

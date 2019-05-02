@@ -2,6 +2,10 @@ import React, { Component } from 'react';
 import './App.css';
 
 import RapperContainer from './RapperContainer'
+import Home from './Home'
+import Error from './Error'
+
+import { Route, Switch } from 'react-router-dom'
 
 
 class App extends Component {
@@ -9,7 +13,11 @@ class App extends Component {
 
     return (
       <div>
-        <RapperContainer />
+        <Switch>
+          <Route path="/rappers" component={RapperContainer} />
+          <Route path="/home" component={Home}/>
+          <Route path="/" component={Error} />
+        </Switch>
       </div>
     )
   }

@@ -1,5 +1,8 @@
 import React, { Component } from 'react'
 
+import { Link } from 'react-router-dom'
+
+
 class RapperCard extends Component {
 
   // When writing state
@@ -20,7 +23,9 @@ class RapperCard extends Component {
     const imgSrc = this.state.clicked ? this.props.happyImage : this.props.sadImage
     return (
       <div>
-        <h3>{this.props.name}</h3>
+      <Link to={`/rappers/${this.props.name.toLowerCase()}`}>
+      <h3>{this.props.name}</h3>
+      </Link>
         <img onClick={this.handleClick} alt={this.props.name} src={imgSrc}/>
       </div>
     )
