@@ -10,7 +10,7 @@ const Navbar = (props) => {
       <li><Link to="/">Home</Link></li>
       {props.currentUser ? (
         <Fragment>
-          <li><Link to="/logout">Logout</Link></li>
+          <li><Link to="/logout" onClick={props.logout}>Logout</Link></li>
           <li><Link to="/users">All Users</Link></li>
         </Fragment>
         ) : (

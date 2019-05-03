@@ -16,7 +16,7 @@ class Login extends Component {
 
   render(){
     return (
-      <form>
+      <form onSubmit={(e) => this.props.handleLogin(e, this.state)}>
         <label htmlFor="email">Email</label>
         <input type="email" name="email" placeholder="test@example.com" value={this.state.email} onChange={this.handleChange}/>
         <label htmlFor="password">Password</label>

@@ -3,6 +3,6 @@ Rails.application.routes.draw do
 
   resources :users, only: [:create, :update, :show, :index]
   post '/signup', to: "users#create"
-
-  # post '/login'
+  post '/login', to: "auth#create"
+  get "/current_user", to: "auth#current_profile"
 end
