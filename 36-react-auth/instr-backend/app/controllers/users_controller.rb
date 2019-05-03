@@ -5,9 +5,13 @@ class UsersController < ApplicationController
     render json: @users
   end
 
-  # Logic for Sign Up
   def create
-
+    @user = User.create(user_params)
+    if @user.valid?
+      render json: @user, status: :created
+    else
+      render json: { error: 'Failed to create user' }, status: :not_acceptable
+    end
   end
 
   def show
